@@ -112,16 +112,110 @@ function App() {
      const chestCut1 = CSG.subtract(Torso, CapsuleMeshCut1); //CORTE 1
      const chestCut2 = CSG.subtract(chestCut1, CapsuleMeshCut2); //CORTE 2
      scene.add(chestCut2);
-      //CREACIÓN DEL TORSO 15/19 (REDONDEO DE ESQUINAS)
-      const CutBoxGeometry = new THREE.BoxGeometry(2, 2, 5);
-      const CutBoxMaterial = new THREE.MeshNormalMaterial({
+       //CREACIÓN DEL TORSO 7/18 (PECTORAL)
+       const ChestCylinderDetailGeometry = new THREE.CylinderGeometry(2, 1.5, 1.5, 20, 20, false, 4, 3.1);
+       const ChestCylinderDetailMaterial = new THREE.MeshBasicMaterial({
         side: THREE.DoubleSide,
         color: 0xf6d502,
         clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
         clipShadows: true,
-      });
-      const CutBoxMesh = new THREE.Mesh(CutBoxGeometry, CutBoxMaterial);
-      scene.add(CutBoxMesh);
+       });
+       const ChestCylinderDetailMesh = new THREE.Mesh(ChestCylinderDetailGeometry, ChestCylinderDetailMaterial);
+       ChestCylinderDetailMesh.position.set(2.25, 15, 1.4);
+       ChestCylinderDetailMesh.rotateY(Math.PI / 4.5)
+       ChestCylinderDetailMesh.updateMatrixWorld();
+       //CREACIÓN DEL TORSO 8/18 (PECTORAL)
+       const ChestCylinderDetailGeometry2 = new THREE.CylinderGeometry(2, 1.5, 1.5, 20, 20, false, 4, 3.1);
+       const ChestCylinderDetailMaterial2 = new THREE.MeshBasicMaterial({
+        side: THREE.DoubleSide,
+        color: 0xf6d502,
+        clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
+        clipShadows: true,
+       });
+       const ChestCylinderDetailMesh2 = new THREE.Mesh(ChestCylinderDetailGeometry2, ChestCylinderDetailMaterial2);
+       ChestCylinderDetailMesh2.position.set(-2.25, 15, 1.4);
+       ChestCylinderDetailMesh2.rotateY(Math.PI / 4.5)
+       ChestCylinderDetailMesh2.updateMatrixWorld();
+       scene.add(ChestCylinderDetailMesh, ChestCylinderDetailMesh2);
+       //CREACIÓN DEL TORSO 9/18 (AB1)
+       const ChestCapsuleDetailGeometry = new THREE.CapsuleGeometry(1, 0.8, 20, 20);
+       const ChestCapsuleDetailMaterial = new THREE.MeshBasicMaterial({
+        side: THREE.DoubleSide,
+        color: 0xf6d502,
+        clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
+        clipShadows: true,
+       });
+       const ChestCapsuleDetailMesh = new THREE.Mesh(ChestCapsuleDetailGeometry, ChestCapsuleDetailMaterial);
+       ChestCapsuleDetailMesh.rotateZ(Math.PI / 2);
+       ChestCapsuleDetailMesh.position.set(-1.7, 12.7, 2.1);
+       ChestCapsuleDetailMesh.updateMatrixWorld();
+       scene.add(ChestCapsuleDetailMesh);
+       //CREACIÓN DEL TORSO 10/18 (AB2)
+        const ChestCapsuleDetailGeometry2 = new THREE.CapsuleGeometry(1, 0.8, 20, 20);
+        const ChestCapsuleDetailMaterial2 = new THREE.MeshBasicMaterial({
+        side: THREE.DoubleSide,
+        color: 0xf6d502,
+        clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
+        clipShadows: true,
+        });
+        const ChestCapsuleDetailMesh2 = new THREE.Mesh(ChestCapsuleDetailGeometry2, ChestCapsuleDetailMaterial2);
+        ChestCapsuleDetailMesh2.rotateZ(Math.PI / 2);
+        ChestCapsuleDetailMesh2.position.set(1.7, 12.7, 2.1);
+        ChestCapsuleDetailMesh2.updateMatrixWorld();
+        scene.add(ChestCapsuleDetailMesh2);
+       //CREACIÓN DEL TORSO 11/18 (AB3)
+       const ChestCapsuleDetailGeometry3 = new THREE.CapsuleGeometry(1, 0.8, 20, 20);
+       const ChestCapsuleDetailMaterial3 = new THREE.MeshBasicMaterial({
+        side: THREE.DoubleSide,
+        color: 0xf6d502,
+        clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
+        clipShadows: true,
+       });
+       const ChestCapsuleDetailMesh3 = new THREE.Mesh(ChestCapsuleDetailGeometry3, ChestCapsuleDetailMaterial3);
+       ChestCapsuleDetailMesh3.rotateZ(Math.PI / 2);
+       ChestCapsuleDetailMesh3.position.set(-1.7, 10.7, 2.1);
+       ChestCapsuleDetailMesh3.updateMatrixWorld();
+       scene.add(ChestCapsuleDetailMesh3);
+       //CREACIÓN DEL TORSO 12/18 (AB4)
+        const ChestCapsuleDetailGeometry4 = new THREE.CapsuleGeometry(1, 0.8, 20, 20);
+        const ChestCapsuleDetailMaterial4 = new THREE.MeshBasicMaterial({
+        side: THREE.DoubleSide,
+        color: 0xf6d502,
+        clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
+        clipShadows: true,
+        });
+        const ChestCapsuleDetailMesh4 = new THREE.Mesh(ChestCapsuleDetailGeometry4, ChestCapsuleDetailMaterial4);
+        ChestCapsuleDetailMesh4.rotateZ(Math.PI / 2);
+        ChestCapsuleDetailMesh4.position.set(1.7, 10.7, 2.1);
+        ChestCapsuleDetailMesh4.updateMatrixWorld();
+        scene.add(ChestCapsuleDetailMesh4);
+       //CREACIÓN DEL TORSO 13/19 (AB3)
+       const ChestCapsuleDetailGeometry5 = new THREE.CapsuleGeometry(1, 0.8, 20, 20);
+       const ChestCapsuleDetailMaterial5 = new THREE.MeshBasicMaterial({
+        side: THREE.DoubleSide,
+        color: 0xf6d502,
+        clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
+        clipShadows: true,
+       });
+       const ChestCapsuleDetailMesh5 = new THREE.Mesh(ChestCapsuleDetailGeometry5, ChestCapsuleDetailMaterial5);
+       ChestCapsuleDetailMesh5.rotateZ(Math.PI / 2);
+       ChestCapsuleDetailMesh5.position.set(-1.7, 8.7, 2.1);
+       ChestCapsuleDetailMesh5.updateMatrixWorld();
+       scene.add(ChestCapsuleDetailMesh5);
+       //CREACIÓN DEL TORSO 14/19 (AB4)
+        const ChestCapsuleDetailGeometry6 = new THREE.CapsuleGeometry(1, 0.8, 20, 20);
+        const ChestCapsuleDetailMaterial6 = new THREE.MeshBasicMaterial({
+          side: THREE.DoubleSide,
+          color: 0xf6d502,
+          clippingPlanes: [new THREE.Plane(new THREE.Vector3(0, -1, 0), 0)],
+          clipShadows: true,
+        });
+        const ChestCapsuleDetailMesh6 = new THREE.Mesh(ChestCapsuleDetailGeometry6, ChestCapsuleDetailMaterial6);
+        ChestCapsuleDetailMesh6.rotateZ(Math.PI / 2);
+        ChestCapsuleDetailMesh6.position.set(1.7, 8.7, 2.1);
+        ChestCapsuleDetailMesh6.updateMatrixWorld();
+        scene.add(ChestCapsuleDetailMesh6);
+
       //GENERADOR DE GRID DE UBICACIÓN E IDENTIFICADOR DE EJES
       const grid = new THREE.GridHelper(100, 100);
       const axis = new THREE.AxesHelper(3);
